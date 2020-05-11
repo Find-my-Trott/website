@@ -2,9 +2,14 @@
 <html>
   <head>
     <title>Find my trott.</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/logo.ico" />
     <script src="bundle.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xw
+    E/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 </head>
   <body>
@@ -20,7 +25,7 @@
         </div>
        <div class="links col-sm-4 col-md-5 justify-content-around d-none d-sm-flex">
          <div class="link">
-           <a href="#map"><p>map</p></a>
+           <a href="#mapSection"><p>map</p></a>
          </div>
          <div class="link">
            <a href="#apps">
@@ -31,7 +36,7 @@
       </div>
       
     </div>
-    <div id="map" class="landingPage">
+    <div id="mapSection" class="landingPage">
       <div class="container-fluid">
         <div class="row">
           <div class="col-12 col-md-6 d-flex justify-content-center">
@@ -51,7 +56,7 @@
             </div>
           </div>
           <div class="col-12 col-md-6 d-flex justify-content-center">
-            <div class="map ">map</div>
+            <div id="map"></div>
           </div>
         </div>
       </div>
@@ -70,12 +75,12 @@
           <div class="col-12 col-md-6">
             <div class="d-flex justify-content-center justify-content-md-end ">   
               <div class="circle">
-                <a href="li.me/fr/page-d'accueil">
+                <a target="_blank" rel="noopener noreferrer"  href="http://li.me/fr/page-d'accueil">
                   <img src="..\assets\images\lime.png" alt="Download Lime">
                 </a>
               </div>
               <div class="circle">
-                <a href="www.uber/com">
+                <a target="_blank" rel="noopener noreferrer"  href="http://www.uber.com">
                   <img src="..\assets\images\lime.png" alt="Download Uber">
                 </a>
               </div>
@@ -83,12 +88,12 @@
 
             <div class="d-flex justify-content-center justify-content-md-end">
               <div class="circle">
-                <a href="bolt.eu">
+                <a target="_blank" rel="noopener noreferrer"  href="http://bolt.eu">
                   <img src="..\assets\images\lime.png" alt="Download Bolt">
                 </a>
               </div>
               <div class="circle">
-                <a href="spin.app">
+                <a target="_blank" rel="noopener noreferrer"  href="http://spin.app">
                   <img src="..\assets\images\lime.png" alt="Download Spin">
                 </a>
               </div>
@@ -97,24 +102,24 @@
           <div class="col-12 col-md-6">
             <div class="d-flex justify-content-center justify-content-md-start ">
               <div class="circle">
-                <a href="https://apps.apple.com/fr/app/bird-soyez-libre-bon-voyage/id1260842311">
+                <a target="_blank" rel="noopener noreferrer"  href="https://apps.apple.com/fr/app/bird-soyez-libre-bon-voyage/id1260842311">
                   <img src="..\assets\images\lime.png" alt="Download Bird">
                 </a>
               </div> 
               <div class="circle">
-                <a href="https://apps.apple.com/fr/app/hive-trottinette-en-libre-se/id1439420370">
+                <a target="_blank" rel="noopener noreferrer"  href="https://apps.apple.com/fr/app/hive-trottinette-en-libre-se/id1439420370">
                   <img src="..\assets\images\lime.png" alt="Download Hive">
                 </a>
               </div> 
             </div>
             <div class="d-flex justify-content-center justify-content-md-start">
               <div class="circle">
-                <a href="ridedott.com">
+                <a target="_blank" rel="noopener noreferrer"  href="http://ridedott.com">
                   <img  src="..\assets\images\lime.png" alt=" Download dott">
                 </a>
               </div>
               <div class="circle">
-                <a href="ridedott.com">
+                <a target="_blank" rel="noopener noreferrer"  href="http://ridedott.com">
                   <img  src="..\assets\images\lime.png" alt=" Download dott">
                 </a>
               </div>               
@@ -132,8 +137,11 @@
       
     </div>
     
-    <script src="./src/index.js"></script>
-   
+
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+    <script src="../dist/main.js"></script>
   </body>
 </html>
 
@@ -141,6 +149,7 @@
   html{
     scroll-behavior: smooth;
   }
+ 
   a{
     text-decoration: none;
     color:black;
@@ -209,10 +218,11 @@
     padding-top: 20px;
   }
 
-  .map{
-    width:500px;
+  #map{
     height:500px;
-    background-color: rgb(201, 201, 201);
+    width:500px;
+    z-index:1;
+
   }
 
 
